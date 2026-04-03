@@ -109,5 +109,32 @@ color:#94a3b8;
 
 </footer>
 
+<audio id="bgmusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()" id="musicBtn">
+🔊 Mute
+</button>
+
+<script>
+
+var music = document.getElementById("bgmusic");
+var button = document.getElementById("musicBtn");
+
+function toggleMusic(){
+
+if(music.muted){
+    music.muted = false;
+    button.innerText = "🔊 Mute";
+}else{
+    music.muted = true;
+    button.innerText = "🔇 Unmute";
+}
+
+}
+
+</script>
+
 </body>
 </html>
