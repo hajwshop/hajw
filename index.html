@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,19 +15,19 @@
 
 body{
 margin:0;
+font-family:Arial;
 background:#000;
 color:white;
-font-family:Arial;
 text-align:center;
 }
 
 header{
-padding:40px;
+background:#000;
+padding:25px;
 }
 
 .logo{
 width:220px;
-transition: transform 0.1s linear, filter 0.1s linear;
 }
 
 nav{
@@ -41,18 +42,40 @@ margin:0 20px;
 font-size:18px;
 }
 
+nav a:hover{
+color:#38bdf8;
+}
+
 .hero{
 padding:120px 20px;
 }
 
 .hero h1{
 font-size:50px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+color:#94a3b8;
+}
+
+.button{
+display:inline-block;
+margin-top:30px;
+padding:12px 30px;
+background:#38bdf8;
+color:black;
+text-decoration:none;
+border-radius:6px;
+font-weight:bold;
 }
 
 footer{
 margin-top:100px;
 padding:30px;
-color:#888;
+background:#000;
+color:#94a3b8;
 }
 
 /* music button */
@@ -61,12 +84,14 @@ color:#888;
 position:fixed;
 bottom:20px;
 right:20px;
-padding:12px 18px;
+padding:10px 18px;
 background:#111;
 color:white;
 border:none;
 border-radius:6px;
 cursor:pointer;
+font-size:16px;
+transition:0.3s;
 }
 
 #musicBtn:hover{
@@ -81,7 +106,7 @@ color:black;
 <body>
 
 <header>
-<img src="HajwLogo.png" class="logo" id="logo">
+<img src="HajwLogo.png" class="logo">
 </header>
 
 <nav>
@@ -94,7 +119,10 @@ color:black;
 <section class="hero">
 
 <h1>Welcome to H A J W</h1>
-<p>Styled for the Future</p>
+
+<p>Styled for the Future.</p>
+
+<a class="button" href="#">Explore</a>
 
 </section>
 
@@ -102,55 +130,35 @@ color:black;
 © 2026 H A J W
 </footer>
 
-<audio id="bgmusic" src="music.mp3" loop></audio>
+<audio id="bgmusic" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
 
-<button onclick="startMusic()" id="musicBtn">
-🎵 Start Music
+<button onclick="toggleMusic()" id="musicBtn">
+🎵 Play Music
 </button>
 
 <script>
 
-let audio = document.getElementById("bgmusic");
-let logo = document.getElementById("logo");
+var music = document.getElementById("bgmusic");
+var button = document.getElementById("musicBtn");
 
-let audioContext;
-let analyser;
-let source;
-let dataArray;
+function toggleMusic(){
 
-function startMusic(){
-
-audio.play();
-
-audioContext = new AudioContext();
-source = audioContext.createMediaElementSource(audio);
-
-analyser = audioContext.createAnalyser();
-analyser.fftSize = 256;
-
-let bufferLength = analyser.frequencyBinCount;
-dataArray = new Uint8Array(bufferLength);
-
-source.connect(analyser);
-analyser.connect(audioContext.destination);
-
-animate();
-
+if(music.paused){
+music.play();
+button.innerText = "🔇 Mute";
 }
 
-function animate(){
+else if(music.muted){
+music.muted = false;
+button.innerText = "🔇 Mute";
+}
 
-requestAnimationFrame(animate);
-
-analyser.getByteFrequencyData(dataArray);
-
-let bass = dataArray[1]; 
-
-let scale = 1 + bass / 400;
-let glow = bass / 2;
-
-logo.style.transform = "scale(" + scale + ")";
-logo.style.filter = "drop-shadow(0 0 "+glow+"px cyan)";
+else{
+music.muted = true;
+button.innerText = "🔊 Unmute";
+}
 
 }
 
