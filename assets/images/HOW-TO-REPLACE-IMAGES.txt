@@ -1,0 +1,14 @@
+HOW TO REPLACE BANNER IMAGES
+==============================
+
+Men's card (homepage):
+  Replace: assets/images/men-banner.jpg
+  Any JPG/PNG works. Recommended size: 900x700px or larger.
+
+Women's card (homepage):
+  Replace: assets/images/women-banner.jpg
+  Any JPG/PNG works. Recommended size: 900x700px or larger.
+
+Just drop your image file in this folder with the exact same filename.
+You can also use a different filename — just update the src in index.html:
+  <img src="assets/images/YOUR-FILE.jpg" ...>
