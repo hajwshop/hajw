@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customized Bodo Blouse — HAJW</title>
+  <link rel="icon" href="../icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- Base path marker: pages/ is one level deep, so base = ../ -->
+  <div data-base="../" style="display:none;"></div>
+
+  <!-- Header placeholder -->
+  <div id="site-header-placeholder"></div>
+
+  <main class="page-content">
+    <div class="product-layout">
+
+      <!-- ── LEFT: Gallery ── -->
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img id="main-product-img"
+               src="../images/product1/thumbnail.jpg"
+               alt="Customized Bodo Blouse"
+               onerror="this.src=''; this.parentElement.innerHTML='<div class=\'img-placeholder\'>Main Product Image</div>'">
+        </div>
+
+        <div class="gallery-thumbs">
+          <!-- Each thumb: data-color-index links to colour swatch index (-1 = no link) -->
+          <div class="thumb active" data-color-index="0">
+            <img src="../images/product1/img1.jpg" alt="Bodo Blouse - View 1 (White)"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>1</div>'">
+          </div>
+          <div class="thumb" data-color-index="1">
+            <img src="../images/product1/img2.jpg" alt="Bodo Blouse - View 2 (Red)"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>2</div>'">
+          </div>
+          <div class="thumb" data-color-index="2">
+            <img src="../images/product1/img3.jpg" alt="Bodo Blouse - View 3 (Blue)"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>3</div>'">
+          </div>
+          <div class="thumb" data-color-index="3">
+            <img src="../images/product1/img4.jpg" alt="Bodo Blouse - View 4 (Green)"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>4</div>'">
+          </div>
+          <div class="thumb" data-color-index="4">
+            <img src="../images/product1/img5.jpg" alt="Bodo Blouse - View 5 (Black)"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>5</div>'">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Product Details ── -->
+      <div class="product-details">
+
+        <h1 class="product-name" id="product-name">Customized Bodo Blouse</h1>
+
+        <div class="product-price-block">
+          <span class="price-discounted" id="product-price">₹1,499</span>
+          <span class="price-original">₹1,999</span>
+          <span class="price-badge">25% off</span>
+        </div>
+
+        <div class="stock-status">In Stock &mdash; Ready to Ship</div>
+
+        <!-- Size -->
+        <div class="detail-section">
+          <div class="detail-label">Select Size</div>
+          <div class="size-options">
+            <button class="size-btn" data-size="XS">XS</button>
+            <button class="size-btn" data-size="S">S</button>
+            <button class="size-btn" data-size="M">M</button>
+            <button class="size-btn" data-size="L">L</button>
+            <button class="size-btn" data-size="XL">XL</button>
+          </div>
+          <div class="validation-msg" id="size-error">Please select a size.</div>
+        </div>
+
+        <!-- Colour -->
+        <div class="detail-section">
+          <div class="detail-label">Colour</div>
+          <div class="color-options">
+            <!-- data-thumb-index: which thumbnail index to show when this colour is selected -->
+            <div class="color-swatch" style="background:#f5f5f0; border:1px solid #ddd;"
+                 data-color-name="White" data-thumb-index="0" title="White"></div>
+            <div class="color-swatch" style="background:#c0392b;"
+                 data-color-name="Red" data-thumb-index="1" title="Red"></div>
+            <div class="color-swatch" style="background:#2980b9;"
+                 data-color-name="Blue" data-thumb-index="2" title="Blue"></div>
+            <div class="color-swatch" style="background:#27ae60;"
+                 data-color-name="Green" data-thumb-index="3" title="Green"></div>
+            <div class="color-swatch" style="background:#1a1714;"
+                 data-color-name="Black" data-thumb-index="4" title="Black"></div>
+          </div>
+          <div class="color-name-label" id="color-name-label"></div>
+          <div class="validation-msg" id="color-error">Please select a colour.</div>
+        </div>
+
+        <!-- Quantity -->
+        <div class="detail-section">
+          <div class="detail-label">Quantity</div>
+          <div class="qty-control">
+            <button class="qty-btn" id="qty-minus">−</button>
+            <div class="qty-display" id="qty-display">1</div>
+            <button class="qty-btn" id="qty-plus">+</button>
+          </div>
+        </div>
+
+        <!-- Buy Now -->
+        <button class="buy-now-btn" id="buy-now-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M5.077 19.924L6.4 15.277A9.038 9.038 0 0 1 3 12C3 7.029 7.03 3 12 3s9 4.029 9 9-4.03 9-9 9a9.035 9.035 0 0 1-4.396-1.14l-2.527.064zM12 1C6.477 1 2 5.477 2 11c0 1.89.526 3.66 1.438 5.168L2 21l4.95-1.418A9.955 9.955 0 0 0 12 21c5.523 0 10-4.477 10-10S17.523 1 12 1z"/>
+          </svg>
+          Buy Now via WhatsApp
+        </button>
+
+        <!-- Info strip -->
+        <div class="info-strip">
+          🚚 Free delivery on orders above ₹2999 &nbsp;|&nbsp; Express dispatch within 24 hours
+        </div>
+
+        <!-- Tabs -->
+        <div class="product-tabs">
+          <div class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-desc">Description</button>
+            <button class="tab-btn" data-tab="tab-spec">Specifications</button>
+          </div>
+
+          <div class="tab-panel active" id="tab-desc">
+            <p>
+              The <strong>Customized Bodo Blouse</strong> is a celebration of the rich weaving heritage of the Bodo community 
+              from Assam, Northeast India. Each blouse is handcrafted using traditional looms and vibrant threads that reflect 
+              the cultural identity of the community. Perfect for festivals, cultural events, or everyday ethnic wear, this 
+              blouse combines authentic craftsmanship with a comfortable modern fit. Your name or initials can be woven or 
+              embroidered on request, making every piece uniquely yours.
+            </p>
+          </div>
+
+          <div class="tab-panel" id="tab-spec">
+            <table class="spec-table">
+              <tr><td>Fabric</td><td>Pure Cotton / Traditional Bodo Weave</td></tr>
+              <tr><td>Fit</td><td>Regular Fit</td></tr>
+              <tr><td>Sleeve</td><td>Short Sleeve</td></tr>
+              <tr><td>Wash Care</td><td>Hand wash in cold water; do not bleach</td></tr>
+              <tr><td>Origin</td><td>Handcrafted in Assam, India</td></tr>
+            </table>
+          </div>
+        </div>
+
+      </div><!-- end product-details -->
+    </div><!-- end product-layout -->
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="site-footer-placeholder"></div>
+
+  <script src="../js/loadComponents.js"></script>
+  <script src="../js/product.js"></script>
+  <script src="../js/tabs.js"></script>
+</body>
+</html>

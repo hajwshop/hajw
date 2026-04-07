@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAJW — Handcrafted Bodo Wear</title>
+  <link rel="icon" href="icons/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Base path marker for root (./). Components use this to resolve paths. -->
+  <div data-base="./" style="display:none;"></div>
+
+  <!-- Header placeholder -->
+  <div id="site-header-placeholder"></div>
+
+  <main class="page-content">
+
+    <div class="home-hero">
+      <h1>Bodo Heritage, Crafted for You</h1>
+      <p>Authentic handcrafted Bodo blouses — custom made with care</p>
+    </div>
+
+    <h2 class="section-title">Our Collection</h2>
+
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="playcard-wrap">
+        <div>
+          <a href="pages/product1.html">
+            <img src="images/product1/thumbnail.jpg" alt="Customized Bodo Blouse"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>Product 1<br>Thumbnail</div>'">
+          </a>
+          <div class="card-info">
+            <div class="card-name">Customized Bodo Blouse</div>
+            <a href="pages/product1.html" class="card-shop-btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="playcard-wrap">
+        <div>
+          <a href="pages/product2.html">
+            <img src="images/product2/thumbnail.jpg" alt="Customized Bodo Blouse - Long Sleeve"
+              onerror="this.parentElement.innerHTML='<div class=\'img-placeholder\'>Product 2<br>Thumbnail</div>'">
+          </a>
+          <div class="card-info">
+            <div class="card-name">Customized Bodo Blouse &mdash; Long Sleeve</div>
+            <a href="pages/product2.html" class="card-shop-btn">Shop Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="site-footer-placeholder"></div>
+
+  <script src="js/loadComponents.js"></script>
+</body>
+</html>
